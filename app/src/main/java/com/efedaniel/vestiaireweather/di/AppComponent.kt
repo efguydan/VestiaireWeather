@@ -2,6 +2,8 @@ package com.efedaniel.vestiaireweather.di
 
 import android.app.Application
 import com.efedaniel.vestiaireweather.VestiaireWeatherApp
+import com.efedaniel.vestiaireweather.presentation.weather.details.WeatherDetailsFragment
+import com.efedaniel.vestiaireweather.presentation.weather.list.WeatherListFragment
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -10,7 +12,8 @@ import javax.inject.Singleton
 @Component(modules = [APIServiceModule::class, ViewModelModule::class])
 interface AppComponent {
 
-    fun inject(target: VestiaireWeatherApp)
+    fun inject(target: WeatherListFragment)
+    fun inject(target: WeatherDetailsFragment)
 
     @Component.Builder
     interface Builder {
