@@ -1,5 +1,6 @@
 package com.efedaniel.vestiaireweather.data.network.services
 
+import com.efedaniel.vestiaireweather.BuildConfig
 import com.efedaniel.vestiaireweather.data.network.dtos.WeatherResponseDto
 import retrofit2.Response
 import retrofit2.http.GET
@@ -13,7 +14,7 @@ interface WeatherService {
         @Query("mode") mode: String = "json",
         @Query("units") units: String = "metric",
         @Query("cnt") cnt: String = "16",
-        @Query("appid") accessToken: String = "APPID"
+        @Query("appid") accessToken: String = BuildConfig.API_KEY
     ): Response<WeatherResponseDto>
 
 }
