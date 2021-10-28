@@ -3,7 +3,6 @@ package com.efedaniel.vestiaireweather
 import android.app.Application
 import com.efedaniel.vestiaireweather.di.AppComponent
 import com.efedaniel.vestiaireweather.di.DaggerAppComponent
-import timber.log.Timber
 
 class VestiaireWeatherApp : Application() {
 
@@ -14,6 +13,5 @@ class VestiaireWeatherApp : Application() {
         component = DaggerAppComponent.builder()
             .application(this)
             .build()
-        if (BuildConfig.DEBUG) Timber.plant(Timber.DebugTree())
     }
 }

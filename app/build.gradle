@@ -83,10 +83,6 @@ dependencies {
     implementation 'androidx.room:room-ktx:2.3.0'
     kapt 'androidx.room:room-compiler:2.3.0'
 
-    // Misc
-    implementation 'com.jakewharton.timber:timber:4.7.1'
-    implementation 'io.coil-kt:coil:1.1.1'
-
     // Tests
     testImplementation 'junit:junit:4.+'
     testImplementation 'org.mockito.kotlin:mockito-kotlin:4.0.0'
