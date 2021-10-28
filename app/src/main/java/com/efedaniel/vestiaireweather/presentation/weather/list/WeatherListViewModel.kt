@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class WeatherListViewModel @Inject constructor(
-    private val repository: WeatherRepository,
+    private val repository: WeatherRepository
 ): BaseViewModel() {
 
     val weatherList: LiveData<List<Weather>> = repository.observeAllWeather()

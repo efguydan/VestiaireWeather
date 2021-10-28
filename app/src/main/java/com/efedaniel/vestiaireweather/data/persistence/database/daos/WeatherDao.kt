@@ -17,6 +17,9 @@ interface WeatherDao {
     @Query("SELECT * FROM $WEATHER_TABLE_NAME")
     fun observeAllWeather(): LiveData<List<WeatherEntity>>
 
+    @Query("SELECT * FROM $WEATHER_TABLE_NAME WHERE id = :id")
+    suspend fun getWeatherByID(id: Long): WeatherEntity
+
     @Query("DELETE FROM $WEATHER_TABLE_NAME")
     suspend fun clearTable()
 

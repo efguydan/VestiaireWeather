@@ -6,6 +6,7 @@ import androidx.databinding.BindingAdapter
 import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.efedaniel.vestiaireweather.R
+import com.efedaniel.vestiaireweather.presentation.common.customviews.DetailsCardView
 
 @BindingAdapter("coilImage")
 fun ImageView.loadCoilImage(url: String?) {
@@ -34,3 +35,7 @@ fun setVisibility(view: View, visible: Boolean, occupying: Boolean = false) {
     view.visibility = if (visible) View.VISIBLE else res
 }
 
+@BindingAdapter("metricValue")
+fun DetailsCardView.setMetricValueAdapter(value: String) {
+    setMetricValue(value)
+}
