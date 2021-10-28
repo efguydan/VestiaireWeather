@@ -7,6 +7,15 @@ My Vestiaire Weather is an app to view a list of Weather Forecast for 16 days
 ## App Screenshots
 ![Showcase](https://raw.githubusercontent.com/efguydan/VestiaireWeather/master/showcase/showcase.png)
 
+## Setting Up
+
+Add the Open Weather Map API Key into `local.properties` file
+
+```groovy
+API_KEY="ENTER_API_KEY_HERE"
+```
+
+
 ## Dependencies
 - [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) for managing asynchronous operations
 - JetPack
