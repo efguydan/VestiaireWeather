@@ -55,7 +55,7 @@ class WeatherDetailsFragment : BaseFragment() {
         avgTemperatureTextView.text = "${weather.dayTemperature}℃"
         weatherConditionTextView.text = weather.weatherCondition
         temperatureDescriptionTextView.text = when(weather.dayTemperature) {
-            in 0.0..10.0 -> getString(R.string.cold)
+            in Double.MIN_VALUE..10.0 -> getString(R.string.cold)
             in 10.0..25.0 -> getString(R.string.normal)
             else -> getString(R.string.hot)
         }
