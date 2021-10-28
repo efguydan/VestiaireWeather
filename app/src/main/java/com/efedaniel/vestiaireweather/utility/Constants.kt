@@ -11,5 +11,4 @@ object Constants {
         const val DATABASE_NAME = "weather_database.db"
         const val WEATHER_TABLE_NAME = "weathers"
     }
-
 }

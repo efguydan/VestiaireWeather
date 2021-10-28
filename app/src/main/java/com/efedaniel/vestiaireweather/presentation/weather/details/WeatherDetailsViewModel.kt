@@ -11,7 +11,7 @@ import javax.inject.Inject
 
 class WeatherDetailsViewModel @Inject constructor(
     private val repository: WeatherRepository,
-): BaseViewModel() {
+) : BaseViewModel() {
 
     private val _weather = MutableLiveData<Weather>()
     val weather: LiveData<Weather> = _weather
@@ -21,5 +21,4 @@ class WeatherDetailsViewModel @Inject constructor(
             _weather.postValue(repository.getWeatherByID(id))
         }
     }
-
 }

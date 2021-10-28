@@ -29,5 +29,4 @@ class DetailsCardView @JvmOverloads constructor(
     fun setMetricValue(value: String) {
         findViewById<TextView>(R.id.metricValueTextView).text = value
     }
-
 }

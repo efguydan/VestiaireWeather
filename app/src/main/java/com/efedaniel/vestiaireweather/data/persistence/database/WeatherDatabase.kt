@@ -12,8 +12,7 @@ import com.efedaniel.vestiaireweather.data.persistence.database.entities.Weather
     version = 1,
     exportSchema = false
 )
-abstract class WeatherDatabase: RoomDatabase() {
+abstract class WeatherDatabase : RoomDatabase() {
 
     abstract fun getWeatherDao(): WeatherDao
-
 }

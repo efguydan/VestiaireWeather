@@ -3,13 +3,12 @@ package com.efedaniel.vestiaireweather.domain.repositories
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
 import com.efedaniel.vestiaireweather.data.network.services.WeatherService
-import com.efedaniel.vestiaireweather.data.persistence.database.daos.WeatherDao
-import com.efedaniel.vestiaireweather.data.persistence.database.entities.WeatherEntity
-import com.efedaniel.vestiaireweather.domain.mappers.WeatherMapper
 import com.efedaniel.vestiaireweather.data.network.utils.GENERIC_ERROR_CODE
 import com.efedaniel.vestiaireweather.data.network.utils.GENERIC_ERROR_MESSAGE
 import com.efedaniel.vestiaireweather.data.network.utils.Result
 import com.efedaniel.vestiaireweather.data.network.utils.getAPIResult
+import com.efedaniel.vestiaireweather.data.persistence.database.daos.WeatherDao
+import com.efedaniel.vestiaireweather.domain.mappers.WeatherMapper
 import com.efedaniel.vestiaireweather.domain.models.Weather
 import java.io.IOException
 import javax.inject.Inject
@@ -54,5 +53,4 @@ class WeatherRepository @Inject constructor(
         .mapEntityToDomain(
             persistence.getWeatherByID(id)
         )
-
 }

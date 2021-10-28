@@ -38,5 +38,4 @@ class LocalDataModule {
 
     @Provides
     fun providesWeatherDao(db: WeatherDatabase): WeatherDao = db.getWeatherDao()
-
 }
