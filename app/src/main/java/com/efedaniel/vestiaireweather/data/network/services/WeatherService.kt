@@ -16,5 +16,4 @@ interface WeatherService {
         @Query("cnt") cnt: String = "16",
         @Query("appid") accessToken: String = BuildConfig.API_KEY
     ): Response<WeatherResponseDto>
-
 }

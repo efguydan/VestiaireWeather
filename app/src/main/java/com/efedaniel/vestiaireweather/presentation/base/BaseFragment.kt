@@ -25,5 +25,4 @@ abstract class BaseFragment : Fragment() {
             .make(rootView, message, Snackbar.LENGTH_LONG)
             .show()
     }
-
 }

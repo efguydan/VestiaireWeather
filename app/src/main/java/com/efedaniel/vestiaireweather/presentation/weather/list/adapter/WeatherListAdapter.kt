@@ -1,7 +1,6 @@
 package com.efedaniel.vestiaireweather.presentation.weather.list.adapter
 
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.efedaniel.vestiaireweather.R
@@ -14,7 +13,7 @@ import com.efedaniel.vestiaireweather.utility.date.getDayOfWeek
 
 class WeatherListAdapter(
     private val onWeatherClicked: (Weather) -> Unit
-): ListAdapter<Weather, WeatherListAdapter.ViewHolder>(WeatherDiffCallback) {
+) : ListAdapter<Weather, WeatherListAdapter.ViewHolder>(WeatherDiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(ItemWeatherListBinding.bind(parent.inflate(R.layout.item_weather_list)))
@@ -26,7 +25,7 @@ class WeatherListAdapter(
 
     inner class ViewHolder(
         private val binding: ItemWeatherListBinding
-    ): RecyclerView.ViewHolder(binding.root) {
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Weather) = binding.run {
             dayTextView.text = item.dt.times(1000).getDayOfWeek()
@@ -40,8 +39,5 @@ class WeatherListAdapter(
 
             rootView.setOnClickListener { onWeatherClicked(item) }
         }
-
     }
-
 }
-

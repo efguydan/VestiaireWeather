@@ -22,5 +22,4 @@ interface WeatherDao {
 
     @Query("DELETE FROM $WEATHER_TABLE_NAME")
     suspend fun clearTable()
-
 }

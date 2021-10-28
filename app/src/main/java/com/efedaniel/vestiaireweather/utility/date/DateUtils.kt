@@ -1,7 +1,8 @@
 package com.efedaniel.vestiaireweather.utility.date
 
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Calendar
+import java.util.Date
 
 const val SHORT_DATE_FORMAT = "dd.MM"
 const val LONG_DATE_FORMAT = "dd MMMM, yyyy"
@@ -15,7 +16,7 @@ fun Long.convertToDateString(format: String): String {
 fun Long.getDayOfWeek(): String {
     val calendar = Calendar.getInstance()
     calendar.timeInMillis = Date(this).time
-    return when(calendar.get(Calendar.DAY_OF_WEEK)) {
+    return when (calendar.get(Calendar.DAY_OF_WEEK)) {
         1 -> "Sunday"
         2 -> "Monday"
         3 -> "Tuesday"

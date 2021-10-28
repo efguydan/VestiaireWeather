@@ -12,7 +12,7 @@ import javax.inject.Inject
 
 class WeatherListViewModel @Inject constructor(
     private val repository: WeatherRepository
-): BaseViewModel() {
+) : BaseViewModel() {
 
     val weatherList: LiveData<List<Weather>> = repository.observeAllWeather()
 
@@ -33,5 +33,4 @@ class WeatherListViewModel @Inject constructor(
             }
         }
     }
-
 }

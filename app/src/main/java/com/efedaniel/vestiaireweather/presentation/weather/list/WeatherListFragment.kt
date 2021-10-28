@@ -7,12 +7,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.efedaniel.vestiaireweather.data.network.utils.LoadingStatus
 import com.efedaniel.vestiaireweather.databinding.FragmentWeatherListBinding
 import com.efedaniel.vestiaireweather.domain.models.Weather
 import com.efedaniel.vestiaireweather.presentation.base.BaseFragment
-import com.efedaniel.vestiaireweather.presentation.common.extensions.*
+import com.efedaniel.vestiaireweather.presentation.common.extensions.hide
+import com.efedaniel.vestiaireweather.presentation.common.extensions.invalidateElevation
+import com.efedaniel.vestiaireweather.presentation.common.extensions.observeNonNull
+import com.efedaniel.vestiaireweather.presentation.common.extensions.onScrollChanged
+import com.efedaniel.vestiaireweather.presentation.common.extensions.show
 import com.efedaniel.vestiaireweather.presentation.weather.list.adapter.WeatherListAdapter
-import com.efedaniel.vestiaireweather.data.network.utils.LoadingStatus
 import javax.inject.Inject
 
 class WeatherListFragment : BaseFragment() {
@@ -24,7 +28,8 @@ class WeatherListFragment : BaseFragment() {
     private lateinit var binding: FragmentWeatherListBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentWeatherListBinding.inflate(layoutInflater)
@@ -71,5 +76,4 @@ class WeatherListFragment : BaseFragment() {
             binding.toolbarLayout.toolbarContainer.invalidateElevation(it)
         }
     }
-
 }

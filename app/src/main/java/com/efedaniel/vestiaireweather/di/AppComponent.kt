@@ -1,7 +1,6 @@
 package com.efedaniel.vestiaireweather.di
 
 import android.app.Application
-import com.efedaniel.vestiaireweather.VestiaireWeatherApp
 import com.efedaniel.vestiaireweather.presentation.weather.details.WeatherDetailsFragment
 import com.efedaniel.vestiaireweather.presentation.weather.list.WeatherListFragment
 import dagger.BindsInstance
@@ -23,5 +22,4 @@ interface AppComponent {
         @BindsInstance
         fun application(app: Application): Builder
     }
-
 }

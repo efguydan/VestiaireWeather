@@ -44,5 +44,4 @@ class WeatherMapper @Inject constructor() {
         dayTemperature = entity.dayTemperature,
         weatherCondition = entity.weatherCondition
     )
-
 }

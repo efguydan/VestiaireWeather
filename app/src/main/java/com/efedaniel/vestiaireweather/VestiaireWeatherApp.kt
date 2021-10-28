@@ -5,7 +5,7 @@ import com.efedaniel.vestiaireweather.di.AppComponent
 import com.efedaniel.vestiaireweather.di.DaggerAppComponent
 import timber.log.Timber
 
-class VestiaireWeatherApp: Application() {
+class VestiaireWeatherApp : Application() {
 
     lateinit var component: AppComponent
 
@@ -16,5 +16,4 @@ class VestiaireWeatherApp: Application() {
             .build()
         if (BuildConfig.DEBUG) Timber.plant(Timber.DebugTree())
     }
-
 }

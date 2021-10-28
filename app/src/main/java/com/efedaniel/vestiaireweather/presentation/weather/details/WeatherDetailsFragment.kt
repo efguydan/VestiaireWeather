@@ -29,7 +29,8 @@ class WeatherDetailsFragment : BaseFragment() {
     private lateinit var binding: FragmentWeatherDetailsBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentWeatherDetailsBinding.inflate(layoutInflater)
@@ -54,7 +55,7 @@ class WeatherDetailsFragment : BaseFragment() {
         dateTextView.text = weather.dt.times(1000).convertToDateString(LONG_DATE_FORMAT)
         avgTemperatureTextView.text = "${weather.dayTemperature}℃"
         weatherConditionTextView.text = weather.weatherCondition
-        temperatureDescriptionTextView.text = when(weather.dayTemperature) {
+        temperatureDescriptionTextView.text = when (weather.dayTemperature) {
             in Double.MIN_VALUE..10.0 -> getString(R.string.cold)
             in 10.0..25.0 -> getString(R.string.normal)
             else -> getString(R.string.hot)
@@ -74,5 +75,4 @@ class WeatherDetailsFragment : BaseFragment() {
             binding.toolbarLayout.toolbarContainer.invalidateElevation(it)
         }
     }
-
 }
