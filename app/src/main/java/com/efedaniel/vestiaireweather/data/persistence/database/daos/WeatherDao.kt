@@ -1,12 +1,11 @@
-package com.efedaniel.vestiaireweather.data.persistence.daos
+package com.efedaniel.vestiaireweather.data.persistence.database.daos
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.efedaniel.vestiaireweather.data.persistence.entities.WeatherEntity
-import com.efedaniel.vestiaireweather.domain.models.Weather
+import com.efedaniel.vestiaireweather.data.persistence.database.entities.WeatherEntity
 import com.efedaniel.vestiaireweather.utility.Constants.DatabaseKeys.WEATHER_TABLE_NAME
 
 @Dao

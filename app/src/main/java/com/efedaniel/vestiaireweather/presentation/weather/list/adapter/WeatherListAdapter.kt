@@ -8,6 +8,7 @@ import com.efedaniel.vestiaireweather.R
 import com.efedaniel.vestiaireweather.databinding.ItemWeatherListBinding
 import com.efedaniel.vestiaireweather.domain.models.Weather
 import com.efedaniel.vestiaireweather.presentation.common.extensions.inflate
+import com.efedaniel.vestiaireweather.utility.date.convertToDateString
 
 class WeatherListAdapter(
     private val onWeatherClicked: (Weather) -> Unit
@@ -25,8 +26,14 @@ class WeatherListAdapter(
         private val binding: ItemWeatherListBinding
     ): RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: Weather) {
-
+        fun bind(item: Weather) = binding.run {
+            dayTextView.text = "Tuesday"
+            dateTextView.text = item.dt.convertToDateString()
+            conditionTextView.text = "Sunny"
+            temperatureTextView.text = "${item.temperature}℃"
+            windSpeedTextView.text = "${item.speed}mph"
+            airPressureTextView.text = "${item.pressure}%"
+            humidityTextView.text = "${item.humidity}%"
         }
 
     }

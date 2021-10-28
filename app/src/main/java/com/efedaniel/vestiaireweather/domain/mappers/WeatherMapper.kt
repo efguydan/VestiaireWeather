@@ -1,7 +1,7 @@
 package com.efedaniel.vestiaireweather.domain.mappers
 
 import com.efedaniel.vestiaireweather.data.network.dtos.WeatherDto
-import com.efedaniel.vestiaireweather.data.persistence.entities.WeatherEntity
+import com.efedaniel.vestiaireweather.data.persistence.database.entities.WeatherEntity
 import com.efedaniel.vestiaireweather.domain.models.Weather
 import javax.inject.Inject
 
@@ -14,7 +14,7 @@ class WeatherMapper @Inject constructor() {
             pressure = dto.pressure,
             humidity = dto.humidity,
             speed = dto.speed,
-            deg = dto.deg
+            temperature = dto.feelsLike.day
         )
     }
 
@@ -24,7 +24,7 @@ class WeatherMapper @Inject constructor() {
         pressure = entity.pressure,
         humidity = entity.humidity,
         speed = entity.speed,
-        deg = entity.deg
+        temperature = entity.temperature
     )
 
 }

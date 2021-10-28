@@ -3,13 +3,13 @@ package com.efedaniel.vestiaireweather.presentation.weather.list
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.viewModelScope
-import com.efedaniel.vestiaireweather.data.persistence.entities.WeatherEntity
+import com.efedaniel.vestiaireweather.data.persistence.database.entities.WeatherEntity
 import com.efedaniel.vestiaireweather.domain.mappers.WeatherMapper
 import com.efedaniel.vestiaireweather.domain.models.Weather
 import com.efedaniel.vestiaireweather.domain.repositories.WeatherRepository
 import com.efedaniel.vestiaireweather.presentation.base.BaseViewModel
-import com.efedaniel.vestiaireweather.utility.network.LoadingStatus
-import com.efedaniel.vestiaireweather.utility.network.Result
+import com.efedaniel.vestiaireweather.data.network.utils.LoadingStatus
+import com.efedaniel.vestiaireweather.data.network.utils.Result
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

@@ -1,9 +1,9 @@
-package com.efedaniel.vestiaireweather.data.persistence
+package com.efedaniel.vestiaireweather.data.persistence.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.efedaniel.vestiaireweather.data.persistence.daos.WeatherDao
-import com.efedaniel.vestiaireweather.data.persistence.entities.WeatherEntity
+import com.efedaniel.vestiaireweather.data.persistence.database.daos.WeatherDao
+import com.efedaniel.vestiaireweather.data.persistence.database.entities.WeatherEntity
 
 @Database(
     entities = [
