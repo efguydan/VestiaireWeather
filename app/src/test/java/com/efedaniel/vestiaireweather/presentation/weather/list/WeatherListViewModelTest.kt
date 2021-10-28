@@ -84,5 +84,4 @@ class WeatherListViewModelTest {
         Dispatchers.resetMain()
         testDispatcher.cleanupTestCoroutines()
     }
-
 }

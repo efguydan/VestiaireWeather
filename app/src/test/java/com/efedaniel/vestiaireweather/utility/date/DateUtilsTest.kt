@@ -60,5 +60,4 @@ class DateUtilsTest {
 
         Assert.assertEquals(expectedDay, epochTime.getDayOfWeek())
     }
-
 }
