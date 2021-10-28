@@ -1,4 +1,10 @@
 package com.efedaniel.vestiaireweather.domain.models
 
-class Weather {
-}
+data class Weather(
+    val id: Long,
+    val dt: Long,
+    val pressure: Long,
+    val humidity: Long,
+    val speed: Double,
+    val deg: Long
+)

@@ -3,6 +3,10 @@ package com.efedaniel.vestiaireweather.di
 import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
+import androidx.room.Room
+import com.efedaniel.vestiaireweather.data.persistence.WeatherDatabase
+import com.efedaniel.vestiaireweather.data.persistence.daos.WeatherDao
+import com.efedaniel.vestiaireweather.utility.Constants
 import com.efedaniel.vestiaireweather.utility.Constants.Variables.SHARED_PREFS_NAME
 import com.efedaniel.vestiaireweather.utility.PrefsUtils
 import com.google.gson.Gson
@@ -23,16 +27,16 @@ class LocalDataModule {
     fun providesGlobalSharedPreference(app: Application): SharedPreferences =
         app.getSharedPreferences(SHARED_PREFS_NAME, Context.MODE_PRIVATE)
 
-    // TODO Provide Database
-//    @Provides
-//    @Singleton
-//    fun providesWeatherDatabase(app: Application): WeatherDatabase = Room.databaseBuilder(
-//        app,
-//        WeatherDatabase::class.java,
-//        Constants.DatabaseKeys.DATABASE_NAME
-//    ).fallbackToDestructiveMigration().build()
+    @Provides
+    @Singleton
+    fun providesWeatherDatabase(app: Application): WeatherDatabase = Room.databaseBuilder(
+        app,
+        WeatherDatabase::class.java,
+        Constants.DatabaseKeys.DATABASE_NAME
+    ).fallbackToDestructiveMigration()
+        .build()
 
-//    @Provides
-//    fun providesWeatherDao(db: WeatherDatabase): WeatherDao = db.getWeatherDao()
+    @Provides
+    fun providesWeatherDao(db: WeatherDatabase): WeatherDao = db.getWeatherDao()
 
 }
