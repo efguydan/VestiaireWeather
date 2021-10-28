@@ -27,12 +27,14 @@ class WeatherListAdapter(
     ): RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: Weather) = binding.run {
+            // I didn't understand the date format in the dto. Hence displaying a placeholder here.
             dayTextView.text = "Tuesday"
             dateTextView.text = item.dt.convertToDateString()
-            conditionTextView.text = "Sunny"
-            temperatureTextView.text = "${item.temperature}℃"
+
+            conditionTextView.text = item.weatherCondition
+            temperatureTextView.text = "${item.dayTemperature}℃"
             windSpeedTextView.text = "${item.speed}mph"
-            airPressureTextView.text = "${item.pressure}%"
+            airPressureTextView.text = "${item.pressure}"
             humidityTextView.text = "${item.humidity}%"
         }
 
