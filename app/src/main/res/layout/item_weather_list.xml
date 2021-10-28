@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?selectableItemBackground">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/thirtyGuideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <TextView
+        android:id="@+id/dayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@id/thirtyGuideLine"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Tuesday"
+        />
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/thirtyGuideLine"
+        app:layout_constraintTop_toBottomOf="@id/dayTextView"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="28.10" />
+
+    <TextView
+        android:id="@+id/conditionTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toEndOf="@id/thirtyGuideLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@id/dayTextView"
+        tools:text="Sunny" />
+
+    <TextView
+        android:id="@+id/temperatureTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_marginTop="2dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toEndOf="@id/thirtyGuideLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/conditionTextView"
+        tools:text="19℃" />
+
+    <ImageView
+        android:id="@+id/windSpeedLabel"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:src="@drawable/ic_wind_speed"
+        android:contentDescription="@string/wind_speed"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintTop_toBottomOf="@id/temperatureTextView"
+        app:layout_constraintStart_toEndOf="@id/thirtyGuideLine"
+        />
+
+    <ImageView
+        android:id="@+id/airPressureLabel"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:src="@drawable/ic_air_pressure"
+        android:contentDescription="@string/air_pressure"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/temperatureTextView"
+        app:layout_constraintStart_toEndOf="@id/windSpeedLabel"
+        app:layout_constraintEnd_toStartOf="@id/humidityLabel"
+        />
+
+    <ImageView
+        android:id="@+id/humidityLabel"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:src="@drawable/ic_humidity"
+        android:contentDescription="@string/humidity"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintTop_toBottomOf="@id/temperatureTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/windSpeedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/windSpeedLabel"
+        app:layout_constraintStart_toStartOf="@id/windSpeedLabel"
+        app:layout_constraintTop_toBottomOf="@id/windSpeedLabel"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="4mph" />
+
+    <TextView
+        android:id="@+id/airPressureTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toStartOf="@id/airPressureLabel"
+        app:layout_constraintEnd_toEndOf="@id/airPressureLabel"
+        app:layout_constraintTop_toBottomOf="@id/airPressureLabel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="63%"
+        />
+
+    <TextView
+        android:id="@+id/humidityTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toStartOf="@id/humidityLabel"
+        app:layout_constraintEnd_toEndOf="@id/humidityLabel"
+        app:layout_constraintTop_toBottomOf="@id/humidityLabel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="14%"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/line_separator_color"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

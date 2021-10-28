@@ -7,10 +7,10 @@ data class WeatherDto(
     @SerializedName("dt")
     val dt: Long,
 
-    @SerializedName("dt")
+    @SerializedName("sunrise")
     val sunrise: Long,
 
-    @SerializedName("dt")
+    @SerializedName("sunset")
     val sunset: Long,
 
     @SerializedName("pressure")
@@ -26,13 +26,13 @@ data class WeatherDto(
     val deg: Long,
 
     @SerializedName("gust")
-    val gust: Long,
+    val gust: Double,
 
     @SerializedName("clouds")
     val clouds: Long,
 
     @SerializedName("pop")
-    val pop: Long,
+    val pop: Double,
 
     @SerializedName("temp")
     val temperature: TemperatureDto,

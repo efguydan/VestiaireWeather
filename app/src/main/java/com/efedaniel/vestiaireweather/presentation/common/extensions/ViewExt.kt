@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.core.widget.NestedScrollView
+import androidx.recyclerview.widget.RecyclerView
 
 fun View.show() {
     visibility = View.VISIBLE
@@ -28,6 +29,18 @@ fun NestedScrollView.onScrollChanged(scrollListener: (Int) -> Unit) =
             scrollListener(scrollY)
         }
     )
+
+fun RecyclerView.onScrollChanged(scrollListener: (Int) -> Unit) =
+    addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        override fun onScrolled(
+            recyclerView: RecyclerView,
+            dx: Int,
+            dy: Int
+        ) {
+            super.onScrolled(recyclerView, dx, dy)
+            scrollListener(computeVerticalScrollOffset())
+        }
+    })
 
 fun View.invalidateElevation(scrollY: Int) {
     val expectedScrollY = measuredHeight / 2

@@ -8,12 +8,12 @@ import retrofit2.http.Query
 interface WeatherService {
 
     @GET("/data/2.5/forecast/daily")
-    fun getWeatherForecast(
-        @Query("q") city: String,
-        @Query("mode") mode: String,
-        @Query("units") units: String,
-        @Query("cnt") cnt: String,
-        @Query("appid") accessToken: String
+    suspend fun getWeatherForecast(
+        @Query("q") city: String = "Paris",
+        @Query("mode") mode: String = "json",
+        @Query("units") units: String = "metric",
+        @Query("cnt") cnt: String = "16",
+        @Query("appid") accessToken: String = "APPID"
     ): Response<WeatherResponseDto>
 
 }

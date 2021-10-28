@@ -1,4 +1,30 @@
 package com.efedaniel.vestiaireweather.data.persistence.entities
 
-class WeatherEntity {
-}
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import com.efedaniel.vestiaireweather.utility.Constants
+
+@Entity(tableName = Constants.DatabaseKeys.WEATHER_TABLE_NAME)
+class WeatherEntity(
+
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id")
+    val id: Long? = null,
+
+    @ColumnInfo(name = "dt")
+    val dt: Long,
+
+    @ColumnInfo(name = "pressure")
+    val pressure: Long,
+
+    @ColumnInfo(name = "humidity")
+    val humidity: Long,
+
+    @ColumnInfo(name = "speed")
+    val speed: Double,
+
+    @ColumnInfo(name = "deg")
+    val deg: Long,
+
+)
