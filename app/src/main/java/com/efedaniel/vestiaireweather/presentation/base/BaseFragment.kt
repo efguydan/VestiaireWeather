@@ -7,6 +7,9 @@ import com.efedaniel.vestiaireweather.VestiaireWeatherApp
 import com.efedaniel.vestiaireweather.di.AppComponent
 import com.google.android.material.snackbar.Snackbar
 
+/**
+ * A base class for Fragments to do some basic setup
+ */
 abstract class BaseFragment : Fragment() {
 
     protected val mainActivity: MainActivity

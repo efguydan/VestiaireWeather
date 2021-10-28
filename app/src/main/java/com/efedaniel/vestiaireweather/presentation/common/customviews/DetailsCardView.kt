@@ -9,6 +9,10 @@ import androidx.core.content.withStyledAttributes
 import com.efedaniel.vestiaireweather.R
 import com.google.android.material.card.MaterialCardView
 
+/**
+ * A compound View to abstract the cards on the Weather Details Fragment for easier
+ * reuse
+ */
 class DetailsCardView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
@@ -26,6 +30,9 @@ class DetailsCardView @JvmOverloads constructor(
         }
     }
 
+    /**
+     * Exposed method to set the value of the metric
+     */
     fun setMetricValue(value: String) {
         findViewById<TextView>(R.id.metricValueTextView).text = value
     }

@@ -7,22 +7,30 @@ import androidx.annotation.LayoutRes
 import androidx.core.widget.NestedScrollView
 import androidx.recyclerview.widget.RecyclerView
 
+/**
+ * Helper method to show a view
+ */
 fun View.show() {
     visibility = View.VISIBLE
 }
 
+/**
+ * Helper method to hide a view
+ */
 fun View.hide() {
     visibility = View.GONE
 }
 
-fun View.setVisibilityState(state: Boolean) {
-    if (state) show() else hide()
-}
-
+/**
+ * Helper method to inflate a Layout file
+ */
 inline fun <reified T> ViewGroup.inflate(@LayoutRes layoutRes: Int): T {
     return LayoutInflater.from(context).inflate(layoutRes, this, false) as T
 }
 
+/**
+ * Helper method to monitor changes to a Nested Scroll View's scroll state.
+ */
 fun NestedScrollView.onScrollChanged(scrollListener: (Int) -> Unit) =
     setOnScrollChangeListener(
         NestedScrollView.OnScrollChangeListener { _, _, scrollY, _, _ ->
@@ -30,6 +38,9 @@ fun NestedScrollView.onScrollChanged(scrollListener: (Int) -> Unit) =
         }
     )
 
+/**
+ * Helper method to monitor changes to a Recycler View's scroll state.
+ */
 fun RecyclerView.onScrollChanged(scrollListener: (Int) -> Unit) =
     addOnScrollListener(object : RecyclerView.OnScrollListener() {
         override fun onScrolled(
@@ -42,6 +53,9 @@ fun RecyclerView.onScrollChanged(scrollListener: (Int) -> Unit) =
         }
     })
 
+/**
+ * Helper method to change the elevation of a view
+ */
 fun View.invalidateElevation(scrollY: Int) {
     val expectedScrollY = measuredHeight / 2
     val maxElevation = 8f

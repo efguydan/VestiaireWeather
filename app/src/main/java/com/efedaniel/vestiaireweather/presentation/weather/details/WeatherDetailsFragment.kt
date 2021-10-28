@@ -21,6 +21,9 @@ import javax.inject.Inject
 
 class WeatherDetailsFragment : BaseFragment() {
 
+    /**
+     * Factory to provide ViewModels
+     */
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
@@ -50,6 +53,10 @@ class WeatherDetailsFragment : BaseFragment() {
         viewModel.weather.observeNonNull(viewLifecycleOwner, ::onWeatherUpdated)
     }
 
+    /**
+     * Method to bind a weather object to a view.
+     * A different approach would be to use Data Binding.
+     */
     private fun onWeatherUpdated(weather: Weather) = binding.run {
         dayTextView.text = weather.dt.times(1000).getDayOfWeek()
         dateTextView.text = weather.dt.times(1000).convertToDateString(LONG_DATE_FORMAT)
@@ -70,6 +77,10 @@ class WeatherDetailsFragment : BaseFragment() {
         popCardView.setMetricValue(weather.pop.toString())
     }
 
+    /**
+     * Helped method to increase the elevation of the toolbar when the nested scroll
+     * view scrolls under it
+     */
     private fun setupToolbar() {
         binding.scrollView.onScrollChanged {
             binding.toolbarLayout.toolbarContainer.invalidateElevation(it)

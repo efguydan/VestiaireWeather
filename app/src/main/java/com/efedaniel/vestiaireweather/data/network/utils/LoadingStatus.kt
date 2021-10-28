@@ -1,5 +1,8 @@
 package com.efedaniel.vestiaireweather.data.network.utils
 
+/**
+ * Loading Status Enum to keep network calls states.
+ */
 sealed class LoadingStatus {
 
     object Success : LoadingStatus()

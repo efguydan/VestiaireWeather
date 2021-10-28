@@ -21,6 +21,9 @@ import javax.inject.Inject
 
 class WeatherListFragment : BaseFragment() {
 
+    /**
+     * Factory to provide ViewModels
+     */
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
@@ -33,6 +36,9 @@ class WeatherListFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentWeatherListBinding.inflate(layoutInflater)
+        /**
+         * Setting the lifecycle owner of the Binding Object to enable lifecycle aware observations
+         */
         binding.lifecycleOwner = viewLifecycleOwner
         return binding.root
     }
@@ -52,6 +58,9 @@ class WeatherListFragment : BaseFragment() {
         viewModel.loadingStatus.observeNonNull(viewLifecycleOwner, ::onLoadingStatusUpdated)
     }
 
+    /**
+     * Method to show the progress bar or snack bar depending on the loading status of the API call
+     */
     private fun onLoadingStatusUpdated(loadingStatus: LoadingStatus) {
         when (loadingStatus) {
             is LoadingStatus.Loading -> binding.loadingContainer.rootView.show()
@@ -63,6 +72,10 @@ class WeatherListFragment : BaseFragment() {
         }
     }
 
+    /**
+     * Method to handle the click of the weather. Can also be sent the viewmodel to handle
+     * additional operations before finally navigating
+     */
     private fun onWeatherClicked(weather: Weather) {
         findNavController()
             .navigate(
@@ -71,6 +84,9 @@ class WeatherListFragment : BaseFragment() {
             )
     }
 
+    /**
+     * Method to change the elevation of the toolbar when the recycler view scrolls under it
+     */
     private fun setupToolbar() {
         binding.weatherRecyclerView.onScrollChanged {
             binding.toolbarLayout.toolbarContainer.invalidateElevation(it)
