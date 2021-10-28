@@ -50,4 +50,9 @@ class WeatherRepository @Inject constructor(
         }
     }
 
+    suspend fun getWeatherByID(id: Long): Weather = mapper
+        .mapEntityToDomain(
+            persistence.getWeatherByID(id)
+        )
+
 }

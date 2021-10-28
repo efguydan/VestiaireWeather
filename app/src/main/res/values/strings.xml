@@ -3,5 +3,12 @@
     <string name="wind_speed">Wind Speed</string>
     <string name="air_pressure">Air Pressure</string>
     <string name="humidity">Humidity</string>
-    <string name="paris_weather">Paris Weather</string>
+    <string name="max_temperature">Max Temperature</string>
+    <string name="min_temperature">Min Temperature</string>
+    <string name="cold">Cold</string>
+    <string name="normal">Normal</string>
+    <string name="hot">Hot</string>
+    <string name="cloudiness">Cloudiness</string>
+    <string name="wind_gust">Wind Gust</string>
+    <string name="probability_of_precipitation">"Probability of Precipitation "</string>
 </resources>

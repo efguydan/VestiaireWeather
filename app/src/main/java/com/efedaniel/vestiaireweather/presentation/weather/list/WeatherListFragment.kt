@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.efedaniel.vestiaireweather.databinding.FragmentWeatherListBinding
 import com.efedaniel.vestiaireweather.domain.models.Weather
 import com.efedaniel.vestiaireweather.presentation.base.BaseFragment
@@ -58,7 +59,11 @@ class WeatherListFragment : BaseFragment() {
     }
 
     private fun onWeatherClicked(weather: Weather) {
-        TODO("Not Yet Implemented")
+        findNavController()
+            .navigate(
+                WeatherListFragmentDirections
+                    .actionWeatherListFragmentToWeatherDetailsFragment(weather.id)
+            )
     }
 
     private fun setupToolbar() {

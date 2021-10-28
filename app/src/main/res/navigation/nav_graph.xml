@@ -13,11 +13,19 @@
         tools:layout="@layout/fragment_weather_list" >
         <action
             android:id="@+id/action_weatherListFragment_to_weatherDetailsFragment"
-            app:destination="@id/weatherDetailsFragment" />
+            app:destination="@id/weatherDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/weatherDetailsFragment"
         android:name="com.efedaniel.vestiaireweather.presentation.weather.details.WeatherDetailsFragment"
         android:label="fragment_weather_details"
-        tools:layout="@layout/fragment_weather_details" />
+        tools:layout="@layout/fragment_weather_details" >
+        <argument
+            android:name="weatherID"
+            app:argType="long" />
+    </fragment>
 </navigation>
