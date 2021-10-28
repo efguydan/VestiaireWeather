@@ -19,6 +19,9 @@ class WeatherRepository @Inject constructor(
     private val mapper: WeatherMapper
 ) {
 
+    /**
+     * Method to fetch the weather forecast and update the database with the data gotten.
+     */
     suspend fun fetchWeatherForecast(): Result<Boolean> {
         return try {
             when (val result = getAPIResult(network.getWeatherForecast())) {
@@ -43,12 +46,19 @@ class WeatherRepository @Inject constructor(
         }
     }
 
+    /**
+     * Method to observe the list of weather in the database. Will be updated if any data changes
+     * in the table.
+     */
     fun observeAllWeather(): LiveData<List<Weather>> {
         return Transformations.map(persistence.observeAllWeather()) {
             it.map { entity -> mapper.mapEntityToDomain(entity) }
         }
     }
 
+    /**
+     * Method to get a weather object in the database with its ID
+     */
     suspend fun getWeatherByID(id: Long): Weather = mapper
         .mapEntityToDomain(
             persistence.getWeatherByID(id)

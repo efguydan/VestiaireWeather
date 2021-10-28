@@ -5,6 +5,9 @@ import com.efedaniel.vestiaireweather.data.persistence.database.entities.Weather
 import com.efedaniel.vestiaireweather.domain.models.Weather
 import javax.inject.Inject
 
+/**
+ * Helper class to map Weather Model from Dto to Entity and from Dto to Domain Versions
+ */
 class WeatherMapper @Inject constructor() {
 
     fun mapDtoToEntity(dto: WeatherDto): WeatherEntity {

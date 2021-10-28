@@ -1,5 +1,8 @@
 package com.efedaniel.vestiaireweather.data.network.utils
 
+/**
+ * Result Enum to keep Network Responses states
+ */
 sealed class Result<out T : Any> {
 
     data class Success<out T : Any>(val data: T) : Result<T>()
@@ -12,5 +15,3 @@ sealed class Result<out T : Any> {
         }
     }
 }
-
-fun Result.Error.toLoadingStatus(): LoadingStatus.Error = LoadingStatus.Error(errorMessage)

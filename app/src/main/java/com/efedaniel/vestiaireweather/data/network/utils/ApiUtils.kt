@@ -5,6 +5,10 @@ import retrofit2.Response
 const val GENERIC_ERROR_MESSAGE = "An error occurred, Please try again"
 const val GENERIC_ERROR_CODE = "-1"
 
+/**
+ * Helper method to convert the Response Body to a Result type. For easier use in the presentation
+ * layer
+ */
 fun <T : Any> getAPIResult(response: Response<T>): Result<T> {
     if (response.isSuccessful) {
         val body = response.body()
