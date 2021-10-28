@@ -4,11 +4,11 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.room.Room
-import com.efedaniel.vestiaireweather.data.persistence.WeatherDatabase
-import com.efedaniel.vestiaireweather.data.persistence.daos.WeatherDao
+import com.efedaniel.vestiaireweather.data.persistence.database.WeatherDatabase
+import com.efedaniel.vestiaireweather.data.persistence.database.daos.WeatherDao
+import com.efedaniel.vestiaireweather.data.persistence.prefs.PrefsUtils
 import com.efedaniel.vestiaireweather.utility.Constants
 import com.efedaniel.vestiaireweather.utility.Constants.Variables.SHARED_PREFS_NAME
-import com.efedaniel.vestiaireweather.utility.PrefsUtils
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides

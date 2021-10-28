@@ -3,7 +3,7 @@ package com.efedaniel.vestiaireweather.presentation.base
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.efedaniel.vestiaireweather.presentation.common.livedata.SingleLiveEvent
-import com.efedaniel.vestiaireweather.utility.network.LoadingStatus
+import com.efedaniel.vestiaireweather.data.network.utils.LoadingStatus
 
 abstract class BaseViewModel : ViewModel() {
 

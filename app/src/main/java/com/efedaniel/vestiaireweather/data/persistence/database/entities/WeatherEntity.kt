@@ -1,4 +1,4 @@
-package com.efedaniel.vestiaireweather.data.persistence.entities
+package com.efedaniel.vestiaireweather.data.persistence.database.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -25,6 +25,6 @@ class WeatherEntity(
     val speed: Double,
 
     @ColumnInfo(name = "deg")
-    val deg: Long,
+    val temperature: Double
 
 )

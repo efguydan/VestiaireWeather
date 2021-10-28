@@ -1,4 +1,4 @@
-package com.efedaniel.vestiaireweather.utility
+package com.efedaniel.vestiaireweather.data.persistence.prefs
 
 import android.content.SharedPreferences
 import androidx.core.content.edit

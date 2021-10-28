@@ -11,7 +11,7 @@ import com.efedaniel.vestiaireweather.domain.models.Weather
 import com.efedaniel.vestiaireweather.presentation.base.BaseFragment
 import com.efedaniel.vestiaireweather.presentation.common.extensions.*
 import com.efedaniel.vestiaireweather.presentation.weather.list.adapter.WeatherListAdapter
-import com.efedaniel.vestiaireweather.utility.network.LoadingStatus
+import com.efedaniel.vestiaireweather.data.network.utils.LoadingStatus
 import javax.inject.Inject
 
 class WeatherListFragment : BaseFragment() {

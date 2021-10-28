@@ -1,4 +1,4 @@
-package com.efedaniel.vestiaireweather.utility.network
+package com.efedaniel.vestiaireweather.data.network.utils
 
 sealed class LoadingStatus {
 

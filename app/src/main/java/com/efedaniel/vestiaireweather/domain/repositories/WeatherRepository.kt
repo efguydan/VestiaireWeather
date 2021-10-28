@@ -2,13 +2,13 @@ package com.efedaniel.vestiaireweather.domain.repositories
 
 import androidx.lifecycle.LiveData
 import com.efedaniel.vestiaireweather.data.network.services.WeatherService
-import com.efedaniel.vestiaireweather.data.persistence.daos.WeatherDao
-import com.efedaniel.vestiaireweather.data.persistence.entities.WeatherEntity
+import com.efedaniel.vestiaireweather.data.persistence.database.daos.WeatherDao
+import com.efedaniel.vestiaireweather.data.persistence.database.entities.WeatherEntity
 import com.efedaniel.vestiaireweather.domain.mappers.WeatherMapper
-import com.efedaniel.vestiaireweather.utility.network.GENERIC_ERROR_CODE
-import com.efedaniel.vestiaireweather.utility.network.GENERIC_ERROR_MESSAGE
-import com.efedaniel.vestiaireweather.utility.network.Result
-import com.efedaniel.vestiaireweather.utility.network.getAPIResult
+import com.efedaniel.vestiaireweather.data.network.utils.GENERIC_ERROR_CODE
+import com.efedaniel.vestiaireweather.data.network.utils.GENERIC_ERROR_MESSAGE
+import com.efedaniel.vestiaireweather.data.network.utils.Result
+import com.efedaniel.vestiaireweather.data.network.utils.getAPIResult
 import java.io.IOException
 import javax.inject.Inject
 
@@ -34,7 +34,7 @@ class WeatherRepository @Inject constructor(
                 //  Network Error
                 Result.Error(
                     GENERIC_ERROR_CODE,
-                    "No Internet Connection. Displaying Cached Lessons"
+                    "No Internet Connection. Displaying Cached Results"
                 )
             } else {
                 Result.Error(GENERIC_ERROR_CODE, GENERIC_ERROR_MESSAGE)
